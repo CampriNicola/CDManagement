@@ -53,5 +53,23 @@ namespace BlaisePascal.CdManagement.Domain
             }
             return totDuration;
         }
+
+        public void AddSong(Song song)
+        {
+            Songs.Add(song);
+        }
+
+        public List<Song> GetByAuthor(string author)
+        {
+            List<Song> songsByAuthor = new List<Song>();
+            foreach(Song s in Songs)
+            {
+                if (s.GetAuthor() == author)
+                {
+                    songsByAuthor.Add(s);
+                }
+            }
+            return songsByAuthor;
+        }
     }
 }
